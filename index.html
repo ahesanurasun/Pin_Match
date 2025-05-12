@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style type="text/tailwindcss" >
+    @layer components {
+      .btn-keypad {
+        @apply py-[8px] px-[30px] bg-slate-500 rounded text-2xl font-bold text-white;
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <section class="h-screen bg-black text-white max-w-600  mx-auto p-10 flex flex-col justify-center items-center">
+      <div
+        class="max-w-800 mx-auto bg-violet-500 flex justify-center gap-4 p-20 items-center"
+      >
+        <div
+          class="bg-slate-900 p-10 flex flex-col gap-6 h-[450px] rounded shadow-xl"
+        >
+          <input
+            type="text"
+            class="bg-slate-400 rounded p-2 generatePin"
+            placeholder="Generate 4 Digit Pin"
+          />
+          <button  class=" generateBtn cursor-pointer py-10 mt-20 mx-6 bg-sky-600 text-white rounded-[50%] text-2xl hover:bg-slate-500 hover:text-black hover:">
+            Generat<br />
+            Pin
+          </button>
+          
+        </div>
+        <div
+          class="bg-slate-900 p-10 flex flex-col gap-6 h-[450px] rounded shadow-xl"
+        >
+          <input
+            type="text"
+            class="bg-slate-400 rounded p-2 showValue"
+            placeholder="Enter 4 Digit Pin"
+          />
+          <div class="grid grid-flow-row grid-rows-3 gap-3 items-center justify-center">
+           <div class="flex gap-3">
+            <button class="btn-keypad" onclick="keypad(innerText)">1</button>
+         
+            <button class="btn-keypad" onclick="keypad(innerText)">2</button>
+            <button class="btn-keypad" onclick="keypad(innerText)">3</button>
+           </div>
+           <div class="flex gap-3">
+            <button class="btn-keypad" class="btn-keypad" onclick="keypad(innerText)">4</button>
+            <button class="btn-keypad" class="btn-keypad" onclick="keypad(innerText)">5</button>
+            <button class="btn-keypad" class="btn-keypad" onclick="keypad(innerText)">6</button>
+           </div>
+           <div class="flex gap-3">
+           <button class="btn-keypad" onclick="keypad(innerText)">7</button>
+           <button class="btn-keypad" onclick="keypad(innerText)">8</button>
+           <button class="btn-keypad" onclick="keypad(innerText)">9</button>
+           </div>
+           <div class="flex gap-3">
+           <button class="btn-keypad removeBtn" ><</button>
+           <button class="btn-keypad" onclick="keypad(innerText)">0</button>
+           <button class="btn-keypad" onclick="keypad(innerText)">C</button>
+           </div>
+            
+             <button class=" cursor-pointer submit-btn w-full py-2 bg-sky-600 hover:bg-slate-500 text-white rounded">Submit</button>
+            <p class="text-center text-red-600">
+                    <span id="tryLeft"> 3 </span> try left
+                  </p>
+          </div>
+          
+        </div>
+        
+      </div>
+      <div class="pt-5 ">
+           <p class="notify wrong-pin bg-zinc-600 p-3 rounded mb-2">❌ Pin Didn't Match, Please try again</p>
+          <p class="notify correct-pin bg-zinc-600 p-3 rounded">
+            ✅ Pin Matched... Secret door is opening for you
+          </p>
+        </div>
+    </section>
+    
+    <script src="index.js"></script>
+  </body>
+</html>
