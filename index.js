@@ -72,7 +72,7 @@ function matchPin(){
 // Try Left
 function handelTryLeft(){
     let value = parseInt(tryLeft.innerText);
-    console.log(value);
+    // console.log(value);
     if (0 < value){
         tryLeft.innerText = value -1;
     }else{
