@@ -70,6 +70,7 @@ function matchPin(){
     }
 }
 // Try Left
+
 function handelTryLeft(){
     let value = parseInt(tryLeft.innerText);
     
@@ -91,5 +92,5 @@ submit.addEventListener("click", () =>{
 });
 generatePinBtn.addEventListener("click", generatePin);
 removeBtn.addEventListener("click", removeSingleDigit);
-submit.addEventListener("click", matchPin);
+// submit.addEventListener("click", matchPin);
 hideNotifaction();
